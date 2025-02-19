@@ -1,4 +1,4 @@
-from colorama import Fore, Style
+from colorama import Fore, Style, init
 
 def IntInput(prompt):
     '''Function to get an integer input from user
@@ -54,7 +54,7 @@ def floatInput(prompt):
         print(Fore.RED + Style.BRIGHT + 'Valor digitado Invalido. Tente novamente')
         
 
-def main():
+def main_ex113():
     '''Main function of the module'''
 
     int_num = IntInput(Fore.GREEN + Style.BRIGHT + 'Digite um numero:')
@@ -62,3 +62,15 @@ def main():
 
     print(Fore.BLUE + Style.BRIGHT + f'Número inteiro digitado: {int_num}')
     print(Fore.BLUE + Style.BRIGHT + f'Número real digitado: {float_num}')
+
+
+def printMainMenu():
+    '''Funcao que exibe um menu de opcoes'''
+    init(autoreset=True)
+    print(Fore.BLUE + Style.BRIGHT + '-' * 30)
+    print((Fore.RED + Style.BRIGHT + 'MENU PRINCIPAL').center(40))
+    print(Fore.BLUE + Style.BRIGHT + '-' * 30)
+    print(Fore.GREEN + Style.BRIGHT + '1 - Ver pessoas Cadastradas')
+    print(Fore.GREEN + Style.BRIGHT + '2 - Cadastrar nova Pessoa')
+    print(Fore.GREEN + Style.BRIGHT + '3 - Sair do Sistema')
+
