@@ -1,5 +1,5 @@
 from colorama import Fore, Style, init
-
+from time import sleep
 def IntInput(prompt):
     '''Function to get an integer input from user
     :param prompt: int: number to be inputed'''
@@ -64,13 +64,4 @@ def main_ex113():
     print(Fore.BLUE + Style.BRIGHT + f'Número real digitado: {float_num}')
 
 
-def printMainMenu():
-    '''Funcao que exibe um menu de opcoes'''
-    init(autoreset=True)
-    print(Fore.BLUE + Style.BRIGHT + '-' * 30)
-    print((Fore.RED + Style.BRIGHT + 'MENU PRINCIPAL').center(40))
-    print(Fore.BLUE + Style.BRIGHT + '-' * 30)
-    print(Fore.GREEN + Style.BRIGHT + '1 - Ver pessoas Cadastradas')
-    print(Fore.GREEN + Style.BRIGHT + '2 - Cadastrar nova Pessoa')
-    print(Fore.GREEN + Style.BRIGHT + '3 - Sair do Sistema')
 
