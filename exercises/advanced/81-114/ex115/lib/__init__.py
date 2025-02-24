@@ -92,3 +92,14 @@ def welcome_mensage():
     '''Function that displays a welcome message'''
     print(Fore.BLUE + Style.BRIGHT + '-' * 30)
     print((Fore.RED + Style.BRIGHT + 'Bem-vindo ao Sistema de Gerenciamento').center(40))
+
+
+def Registering_person():   
+    '''Function that registers a person'''
+    '''Criar uma classe pessoa com nome, idade,sexo,peso e cadastrar no arquivo'''
+    pass
+
+def Remove_person():
+    '''Function that removes a person'''
+    '''Remover uma pessoa do arquivo'''
+    pass
