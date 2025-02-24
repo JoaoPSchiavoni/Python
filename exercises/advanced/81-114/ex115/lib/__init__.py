@@ -25,9 +25,9 @@ def display_registered_people(filename):
 
 def newfile(filename):
     '''Function to create a new file'''
-    if os.path.exists(filename):
-        print(Fore.GREEN + f'Arquivo {filename} Funcionando Corretamente.')
-    else:
+    if not os.path.exists(filename):
+
+        #print(Fore.GREEN + f'Arquivo {filename} Funcionando Corretamente.')
         try:
             with open (filename, 'wt+') as file:
             #    print(Fore.RED + 'Nenhuma pessoa cadastrada.')
@@ -60,7 +60,8 @@ def Show_optionMenu():
     print(Fore.BLUE + Style.BRIGHT + '-' * 30)
     print(Fore.GREEN + Style.BRIGHT + '1 - Ver pessoas Cadastradas')
     print(Fore.GREEN + Style.BRIGHT + '2 - Cadastrar nova Pessoa')
-    print(Fore.GREEN + Style.BRIGHT + '3 - Sair do Sistema')
+    print(Fore.GREEN + Style.BRIGHT + '3 - Remover Pessoa')
+    print(Fore.GREEN + Style.BRIGHT + '4 - Sair do Sistema')
     print(Fore.BLUE + Style.BRIGHT + '-' * 30)
 
 def Menu():
@@ -91,13 +92,28 @@ def Menu():
 def welcome_mensage():
     '''Function that displays a welcome message'''
     print(Fore.BLUE + Style.BRIGHT + '-' * 30)
-    print((Fore.RED + Style.BRIGHT + 'Bem-vindo ao Sistema de Gerenciamento').center(40))
+    print((Fore.CYAN + Style.BRIGHT + 'Bem-vindo ao Sistema de Gerenciamento').center(40))
 
 
 def Registering_person():   
     '''Function that registers a person'''
     '''Criar uma classe pessoa com nome, idade,sexo,peso e cadastrar no arquivo'''
-    pass
+    class person:
+        def __init__(self, name, age, gender, heigh):
+            self.name = name
+            self.age = age
+            self.gender = gender
+            self.heigh = heigh
+        def get_info(self):
+            self.name = input('Nome: ')
+            self.age = input('Idade: ')
+            self.gender = input('Sexo: ')
+            self.heigh = input('Altura: ')
+def register():
+    with open('people.txt', 'wa') as file:
+        file.write()
+
+    
 
 def Remove_person():
     '''Function that removes a person'''

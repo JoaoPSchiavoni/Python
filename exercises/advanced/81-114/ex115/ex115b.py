@@ -16,19 +16,36 @@ while True:
     print()
     option = lib.IntInput(Fore.BLUE + Style.BRIGHT + 'Digite uma opcao: ')
     print()
-    if option == 3:
-        print(Fore.RED  + Style.BRIGHT + 'Saindo do Sistema...')
+
+    if option == 4:
+        print('-_' * 20)
+        print(Fore.RED  + Style.BRIGHT + 'Saindo do Sistema...' .center(20))
+        print('-_' * 20)
         sleep(2)
         print()
         print(Fore.WHITE + Style.BRIGHT + 'Sistema Encerrado') 
         break
-    elif option == 2:
-        print(Fore.RED + Style.BRIGHT + 'Cadastrando nova pessoa...')
+
+    elif option == 3:
+        lib.ClearScreen()
+        print('-_' * 20)
+        print(Fore.RED + Style.BRIGHT + 'Remover pessoa...'.center(20))
+        print('-_' * 20)
+        print()
         sleep(2)
+
+    elif option == 2:
+        lib.ClearScreen()
+        print('-_' * 20)
+        print(Fore.YELLOW + Style.BRIGHT + 'Cadastrando nova pessoa...'.center(20))
+        print('-_' * 20)
+        print()
+        sleep(2)
+
     elif option == 1:
         lib.ClearScreen()
         print('-_' * 20)
-        print(Fore.YELLOW + Style.BRIGHT + 'Acessando pessoas Cadastradas...')
+        print((Fore.YELLOW + Style.BRIGHT + 'Acessando pessoas Cadastradas...').center(40))
         print('-_' * 20)
         print()
         sleep(2)

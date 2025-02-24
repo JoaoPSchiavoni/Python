@@ -61,5 +61,5 @@ class Dice:
 #for dice in reordedList:
 #    print(dice.to_string())
 
-
-
+porshe = Carro(carro1)
+Carro.ligar(carro1)
