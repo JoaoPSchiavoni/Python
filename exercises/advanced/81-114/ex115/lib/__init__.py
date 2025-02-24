@@ -95,22 +95,13 @@ def welcome_mensage():
     print((Fore.CYAN + Style.BRIGHT + 'Bem-vindo ao Sistema de Gerenciamento').center(40))
 
 
-def Registering_person():   
-    '''Function that registers a person'''
-    '''Criar uma classe pessoa com nome, idade,sexo,peso e cadastrar no arquivo'''
-    class person:
-        def __init__(self, name, age, gender, heigh):
-            self.name = name
-            self.age = age
-            self.gender = gender
-            self.heigh = heigh
-        def get_info(self):
-            self.name = input('Nome: ')
-            self.age = input('Idade: ')
-            self.gender = input('Sexo: ')
-            self.heigh = input('Altura: ')
+
+'''Function that registers a person'''
+'''Criar uma classe pessoa com nome, idade,sexo,peso e cadastrar no arquivo'''
+
+
 def register():
-    with open('people.txt', 'wa') as file:
+    with open('people.txt', 'w') as file:
         file.write()
 
     

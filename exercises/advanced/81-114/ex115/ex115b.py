@@ -40,7 +40,18 @@ while True:
         print(Fore.YELLOW + Style.BRIGHT + 'Cadastrando nova pessoa...'.center(20))
         print('-_' * 20)
         print()
-        sleep(2)
+        sleep(0)
+        name = input('Nome: ')
+        age = input('Idade: ')
+        gender = input('Sexo: ')
+        heigh = input('Altura: ')
+        person = {name, age, gender, heigh}
+
+        for i in person:
+
+
+            file = open('people.txt', 'a')
+            file.writelines(person)
 
     elif option == 1:
         lib.ClearScreen()
