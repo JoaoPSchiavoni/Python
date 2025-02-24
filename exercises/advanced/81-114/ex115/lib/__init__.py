@@ -2,6 +2,40 @@ from colorama import Fore, Style, init
 import os
 from time import sleep
 
+#starts colorama
+init(autoreset=True)
+
+def display_registered_people(filename):
+    '''Function to display registered people'''
+    if not os.path.exists(filename):
+        print(Fore.RED + 'Nenhuma pessoa cadastrada.')
+
+    else:
+        with open(filename, 'r') as file:
+            data = file.read()
+            if data.strip() == "":
+                print(Fore.RED + Style.BRIGHT + 'Nenhuma pessoa cadastrada.')
+                print()
+            else:
+                print(Fore.BLUE + '-' * 30)
+                print(Fore.GREEN + Style.BRIGHT + 'Pessoas Cadastradas:')
+                print(Fore.BLUE + '-' * 30)
+                print(data)
+                print(Fore.BLUE + '-' * 30)
+
+def newfile(filename):
+    '''Function to create a new file'''
+    if os.path.exists(filename):
+        print(Fore.GREEN + f'Arquivo {filename} Funcionando Corretamente.')
+    else:
+        try:
+            with open (filename, 'wt+') as file:
+            #    print(Fore.RED + 'Nenhuma pessoa cadastrada.')
+                pass
+            #
+        except Exception as error:
+            print(Fore.RED + f'Erro ao criar arquivo. : {error}')
+
 def IntInput(prompt):
     '''Function to get an integer input from user
     :param prompt: int: number to be inputed''' 
@@ -13,11 +47,12 @@ def IntInput(prompt):
         sleep(2)
 
 def ClearScreen():
-    '''Funcao que Limpa a tela'''
+    '''Screen clearing function'''
+    
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def Show_optionMenu():
-    '''Funcao que exibe um menu de opcoes'''
+    '''Function that displays a menu of options'''
 
     init(autoreset=True)
     print(Fore.BLUE + Style.BRIGHT + '-' * 30)
@@ -30,24 +65,30 @@ def Show_optionMenu():
 
 def Menu():
     from time import sleep
-    '''Funcao que exibe um menu de opcoes'''
+    '''Function that displays a menu of options'''
+
     while True:
-        ClearScreen()
+        
         welcome_mensage()
         Show_optionMenu()
+
         print()
         option = IntInput(Fore.BLUE + Style.BRIGHT + 'Digite uma opcao: ')
         if option == 3:
-            print(Fore.RED + Style.BRIGHT + 'Saindo do Sistema...')
+            print(Fore.RED  + Style.BRIGHT + 'Saindo do Sistema...')
             sleep(2)
+            print()
             print(Fore.WHITE + Style.BRIGHT + 'Sistema Encerrado') 
-            break       
+            break
         elif option == 2:
             print(Fore.RED + Style.BRIGHT + 'Cadastrando nova pessoa...')
             sleep(3)
         elif option == 1:
             print(Fore.RED + Style.BRIGHT + 'Pessoas Cadastradas...')
             sleep(3)
+            display_registered_people('people.txt')
 
 def welcome_mensage():
+    '''Function that displays a welcome message'''
+    print(Fore.BLUE + Style.BRIGHT + '-' * 30)
     print((Fore.RED + Style.BRIGHT + 'Bem-vindo ao Sistema de Gerenciamento').center(40))

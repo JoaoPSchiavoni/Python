@@ -1,3 +1,37 @@
 import lib
+from colorama import Fore, Style
+from time import sleep
 
-lib.Menu()
+filename = 'people.txt'
+lib.newfile(filename)
+
+
+'''displays a menu of options'''
+
+while True:
+    
+    lib.welcome_mensage()
+    lib.Show_optionMenu()
+
+    print()
+    option = lib.IntInput(Fore.BLUE + Style.BRIGHT + 'Digite uma opcao: ')
+    print()
+    if option == 3:
+        print(Fore.RED  + Style.BRIGHT + 'Saindo do Sistema...')
+        sleep(2)
+        print()
+        print(Fore.WHITE + Style.BRIGHT + 'Sistema Encerrado') 
+        break
+    elif option == 2:
+        print(Fore.RED + Style.BRIGHT + 'Cadastrando nova pessoa...')
+        sleep(2)
+    elif option == 1:
+        lib.ClearScreen()
+        print('-_' * 20)
+        print(Fore.YELLOW + Style.BRIGHT + 'Acessando pessoas Cadastradas...')
+        print('-_' * 20)
+        print()
+        sleep(2)
+        lib.display_registered_people('people.txt')
+
+
