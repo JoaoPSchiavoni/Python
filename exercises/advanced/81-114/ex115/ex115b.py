@@ -18,47 +18,19 @@ while True:
     print()
 
     if option == 4:
-        print('-_' * 20)
-        print(Fore.RED  + Style.BRIGHT + 'Saindo do Sistema...' .center(20))
-        print('-_' * 20)
-        sleep(2)
-        print()
+        lib.HeaderMenu('Saindo do Sistema...')
         print(Fore.WHITE + Style.BRIGHT + 'Sistema Encerrado') 
         break
 
     elif option == 3:
-        lib.ClearScreen()
-        print('-_' * 20)
-        print(Fore.RED + Style.BRIGHT + 'Remover pessoa...'.center(20))
-        print('-_' * 20)
-        print()
-        sleep(2)
+        lib.HeaderMenu('Removendo pessoa...')
 
     elif option == 2:
-        lib.ClearScreen()
-        print('-_' * 20)
-        print(Fore.YELLOW + Style.BRIGHT + 'Cadastrando nova pessoa...'.center(20))
-        print('-_' * 20)
-        print()
-        sleep(0)
-        name = input('Nome: ')
-        age = input('Idade: ')
-        gender = input('Sexo: ')
-        heigh = input('Altura: ')
-        person = {name, age, gender, heigh}
-
-        for i in person:
-
-
-            file = open('people.txt', 'a')
-            file.writelines(person)
+        lib.HeaderMenu('Cadastrando nova pessoa...')
 
     elif option == 1:
-        lib.ClearScreen()
-        print('-_' * 20)
-        print((Fore.YELLOW + Style.BRIGHT + 'Acessando pessoas Cadastradas...').center(40))
-        print('-_' * 20)
-        print()
-        sleep(2)
+        lib.HeaderMenu('Acessando pessoas Cadastradas...')
         lib.display_registered_people('people.txt')
 
+    else:
+        print('Opcao invalida, tente novamente')

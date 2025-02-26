@@ -25,16 +25,14 @@ def display_registered_people(filename):
 
 def newfile(filename):
     '''Function to create a new file'''
-    if not os.path.exists(filename):
-
-        #print(Fore.GREEN + f'Arquivo {filename} Funcionando Corretamente.')
-        try:
-            with open (filename, 'wt+') as file:
-            #    print(Fore.RED + 'Nenhuma pessoa cadastrada.')
-                pass
-            #
-        except Exception as error:
-            print(Fore.RED + f'Erro ao criar arquivo. : {error}')
+    
+    print(Fore.GREEN + f'Arquivo {filename} Funcionando Corretamente.')
+    try:
+        arq = (filename, 'wt+')
+        arq.close()
+        #    print(Fore.RED + 'Nenhuma pessoa cadastrada.')
+    except Exception as error:
+        print(Fore.RED + f'Erro ao criar arquivo. : {error}')
 
 def IntInput(prompt):
     '''Function to get an integer input from user
@@ -47,8 +45,7 @@ def IntInput(prompt):
         sleep(2)
 
 def ClearScreen():
-    '''Screen clearing function'''
-    
+    '''Screen clearing function'''   
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def Show_optionMenu():
@@ -100,13 +97,30 @@ def welcome_mensage():
 '''Criar uma classe pessoa com nome, idade,sexo,peso e cadastrar no arquivo'''
 
 
-def register():
-    with open('people.txt', 'w') as file:
-        file.write()
-
+def register(filename, name='Desconhecido', idade=0):
+    try:
+        arq = open(filename, 'at')
+    except:
+        print('Erro ao abrir o arquivo')
+    else:
+        try:
+            arq.write(f'{name}; {idade}', 'at')
+        except:
+            print('Houve um erro ao tentar escrever os dados')
+        else:
+            print(f'Novo registro de {name} adicionado')
+            arq.close()
     
 
 def Remove_person():
     '''Function that removes a person'''
     '''Remover uma pessoa do arquivo'''
     pass
+
+def HeaderMenu(text):
+        ClearScreen()
+        print('-_' * 20)
+        print(Fore.YELLOW + Style.BRIGHT + text.center(20))
+        print('-_' * 20)
+        print()
+        sleep(1)
