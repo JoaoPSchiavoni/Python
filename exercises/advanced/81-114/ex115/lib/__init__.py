@@ -23,16 +23,6 @@ def display_registered_people(filename):
                 print(data)
                 print(Fore.BLUE + '-' * 30)
 
-def newfile(filename):
-    '''Function to create a new file'''
-    
-    print(Fore.GREEN + f'Arquivo {filename} Funcionando Corretamente.')
-    try:
-        arq = (filename, 'wt+')
-        arq.close()
-        #    print(Fore.RED + 'Nenhuma pessoa cadastrada.')
-    except Exception as error:
-        print(Fore.RED + f'Erro ao criar arquivo. : {error}')
 
 def IntInput(prompt):
     '''Function to get an integer input from user
@@ -91,33 +81,31 @@ def welcome_mensage():
     print(Fore.BLUE + Style.BRIGHT + '-' * 30)
     print((Fore.CYAN + Style.BRIGHT + 'Bem-vindo ao Sistema de Gerenciamento').center(40))
 
+def newfile(filename):
+    '''Function to create a new file'''
+    try:
+        with open(filename, 'a+') as arq:
+            print(Fore.GREEN + f'Arquivo {filename} Funcionando Corretamente.')
 
-
-'''Function that registers a person'''
-'''Criar uma classe pessoa com nome, idade,sexo,peso e cadastrar no arquivo'''
-
+    except Exception as error:
+        print(Fore.RED + f'Erro ao criar arquivo. : {error}')
 
 def register(filename, name='Desconhecido', idade=0):
+    '''Function to register a new person'''
     try:
-        arq = open(filename, 'at')
-    except:
-        print('Erro ao abrir o arquivo')
-    else:
-        try:
-            arq.write(f'{name}; {idade}', 'at')
-        except:
-            print('Houve um erro ao tentar escrever os dados')
-        else:
+        with open(filename, 'a') as arq:
+            arq.write(f'{name};{idade}\n')
             print(f'Novo registro de {name} adicionado')
-            arq.close()
-    
-
+    except Exception as error:
+        print(f'Houve um erro ao tentar escrever os dados: {error}')
+   
 def Remove_person():
     '''Function that removes a person'''
     '''Remover uma pessoa do arquivo'''
     pass
 
 def HeaderMenu(text):
+        '''Function that displays a header menu'''
         ClearScreen()
         print('-_' * 20)
         print(Fore.YELLOW + Style.BRIGHT + text.center(20))

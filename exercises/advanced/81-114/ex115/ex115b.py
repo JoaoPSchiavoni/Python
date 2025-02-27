@@ -27,6 +27,9 @@ while True:
 
     elif option == 2:
         lib.HeaderMenu('Cadastrando nova pessoa...')
+        name = input('Nome: ')
+        age = lib.IntInput('Idade: ')
+        lib.register(filename, name, age)
 
     elif option == 1:
         lib.HeaderMenu('Acessando pessoas Cadastradas...')
