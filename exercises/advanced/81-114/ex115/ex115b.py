@@ -1,6 +1,6 @@
 import lib
 from colorama import Fore, Style
-from time import sleep
+
 
 filename = 'people.txt'
 lib.newfile(filename)
@@ -33,7 +33,7 @@ while True:
 
     elif option == 1:
         lib.HeaderMenu('Acessando pessoas Cadastradas...')
-        lib.display_registered_people('people.txt')
+        lib.display_registered_people1('people.txt')
 
     else:
         print('Opcao invalida, tente novamente')

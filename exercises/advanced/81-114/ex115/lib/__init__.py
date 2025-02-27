@@ -5,6 +5,23 @@ from time import sleep
 #starts colorama
 init(autoreset=True)
 
+def display_registered_people1(filename):
+    try:
+        with open(filename, 'rt') as a:
+            print(Fore.BLUE + '-' * 30)
+            print(Fore.GREEN + Style.BRIGHT + 'Pessoas Cadastradas:')
+            print(Fore.BLUE + '-' * 30)
+            for line in a:
+                data = line.split(';')
+                data[1] = data[1].replace('\n', '')
+                print(Fore.YELLOW + f'Nome:{data[0]:<17}{data[1]:>3} anos')
+                print(Fore.BLUE + '-' * 30)
+    except:
+        print(Fore.RED + 'erro ao ler arquivo')
+
+        
+
+
 def display_registered_people(filename):
     '''Function to display registered people'''
     if not os.path.exists(filename):
@@ -20,7 +37,9 @@ def display_registered_people(filename):
                 print(Fore.BLUE + '-' * 30)
                 print(Fore.GREEN + Style.BRIGHT + 'Pessoas Cadastradas:')
                 print(Fore.BLUE + '-' * 30)
-                print(data)
+                for line in data:
+                    name, age = line.split(';')
+                    print(Fore.YELLOW + f'Nome: {name} - Idade: {age}')
                 print(Fore.BLUE + '-' * 30)
 
 
