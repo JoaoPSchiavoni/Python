@@ -2,15 +2,12 @@ from colorama import Fore, Style, init
 import os
 from time import sleep
 
-#starts colorama
 init(autoreset=True)
 
-def display_registered_people1(filename):
+def display_registered_people(filename):
     try:
         with open(filename, 'rt') as a:
-            print(Fore.BLUE + '-' * 30)
-            print(Fore.GREEN + Style.BRIGHT + 'Pessoas Cadastradas:')
-            print(Fore.BLUE + '-' * 30)
+            line_design('Pessoas Cadastradas:')
             for line in a:
                 data = line.split(';')
                 data[1] = data[1].replace('\n', '')
@@ -19,29 +16,11 @@ def display_registered_people1(filename):
     except:
         print(Fore.RED + 'erro ao ler arquivo')
 
-        
-
-
-def display_registered_people(filename):
-    '''Function to display registered people'''
-    if not os.path.exists(filename):
-        print(Fore.RED + 'Nenhuma pessoa cadastrada.')
-
-    else:
-        with open(filename, 'r') as file:
-            data = file.read()
-            if data.strip() == "":
-                print(Fore.RED + Style.BRIGHT + 'Nenhuma pessoa cadastrada.')
-                print()
-            else:
-                print(Fore.BLUE + '-' * 30)
-                print(Fore.GREEN + Style.BRIGHT + 'Pessoas Cadastradas:')
-                print(Fore.BLUE + '-' * 30)
-                for line in data:
-                    name, age = line.split(';')
-                    print(Fore.YELLOW + f'Nome: {name} - Idade: {age}')
-                print(Fore.BLUE + '-' * 30)
-
+def line_design(txt):
+    '''Function that displays a line design'''
+    print(Fore.BLUE + '-' * 30)
+    print(Fore.GREEN + Style.BRIGHT + 'Pessoas Cadastradas:')
+    print(Fore.BLUE + '-' * 30)
 
 def IntInput(prompt):
     '''Function to get an integer input from user
