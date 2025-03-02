@@ -96,11 +96,7 @@ def register(filename, name='Desconhecido', idade=0):
             print(f'Novo registro de {name} adicionado')
     except Exception as error:
         print(f'Houve um erro ao tentar escrever os dados: {error}')
-   
-def Remove_person():
-    '''Function that removes a person'''
-    '''Remover uma pessoa do arquivo'''
-    pass
+
 
 def HeaderMenu(text):
         '''Function that displays a header menu'''
