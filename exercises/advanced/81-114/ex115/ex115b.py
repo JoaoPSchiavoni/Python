@@ -33,7 +33,7 @@ while True:
 
     elif option == 1:
         lib.HeaderMenu('Acessando pessoas Cadastradas...')
-        lib.display_registered_people1('people.txt')
+        lib.display_registered_people('people.txt')
 
     else:
         print('Opcao invalida, tente novamente')

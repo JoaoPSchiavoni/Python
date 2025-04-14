@@ -5,3 +5,6 @@ kaia;12
 kdoa;20
 akido;20
 joao;31
+luiz;34
+jdasj];None
+dudu;50

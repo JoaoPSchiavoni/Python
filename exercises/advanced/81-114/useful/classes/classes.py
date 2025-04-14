@@ -1,4 +1,4 @@
-from math import randint
+import math
 
 class SoccerPlayer:
     name = ''
@@ -61,5 +61,5 @@ class Dice:
 #for dice in reordedList:
 #    print(dice.to_string())
 
-porshe = Carro(carro1)
-Carro.ligar(carro1)
+porshe = Carro('Porshe', '400cv', '911')
+Carro.ligar(porshe)

@@ -10,6 +10,7 @@ def computer_dice():
     computer_dice_value = [randint(1, 6) for _ in range(3)]
     dice_sum = sum(computer_dice_value)
     players['Computer'] = {'Name': 'Machine', 'Dice': computer_dice_value, 'SumDices': dice_sum}
+
 def players_dice_values_and_name():
     global players
     for i in range(3):
